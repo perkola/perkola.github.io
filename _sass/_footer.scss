@@ -24,13 +24,11 @@
 }
 
 .footer-col-wrapper {
-    margin-left: -$spacing-unit / 2;
     @extend %clearfix;
 }
 
 .footer-col {
     float: left;
-    padding-left: $spacing-unit / 2;
 
     p {
         margin: 0;
@@ -38,21 +36,22 @@
 }
 
 .footer-col-1 {
+    margin-right: $spacing-unit / 2;
     width: -webkit-calc(25% - (#{$spacing-unit} / 2));
     width:         calc(25% - (#{$spacing-unit} / 2));
 }
 
 .footer-col-2 {
-    width: -webkit-calc(75% - (#{$spacing-unit} / 2));
-    width:         calc(75% - (#{$spacing-unit} / 2));
+    width: -webkit-calc(75%);
+    width:         calc(75%);
     text-align: right;
 }
 
 @include media-query($on-palm) {
     .footer-col {
         float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
+        width: -webkit-calc(100%);
+        width:         calc(100%);
         text-align: left;
     }
 }

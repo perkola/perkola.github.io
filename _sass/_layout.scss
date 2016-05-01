@@ -23,7 +23,6 @@
     float: right;
     font-weight: $bold-font-weight;
     text-shadow: 0 0 10px $text-color;
-    margin-right: $spacing-unit;
 
     @include media-query($on-laptop) {
         font-size: 36px;
@@ -37,7 +36,6 @@
         width: 100%;
         display: inline-block;
         line-height: 100%;
-        margin-right: 0;
         margin-bottom: 20px;
     }
 
