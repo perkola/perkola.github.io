@@ -1,0 +1,58 @@
+.site-footer {
+    background: lighten($brand-color, 45%);
+    padding: $spacing-unit 0;
+}
+
+.footer-heading {
+    font-size: 18px;
+    font-weight: $bold-font-weight;
+    margin-bottom: $spacing-unit / 2;
+}
+
+.social-media-list {
+    list-style: none;
+    margin: 0;
+    font-size: 36px;
+
+    li {
+        display: inline-block;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.footer-col-wrapper {
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    padding-left: $spacing-unit / 2;
+
+    p {
+        margin: 0;
+    }
+}
+
+.footer-col-1 {
+    width: -webkit-calc(25% - (#{$spacing-unit} / 2));
+    width:         calc(25% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(75% - (#{$spacing-unit} / 2));
+    width:         calc(75% - (#{$spacing-unit} / 2));
+    text-align: right;
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+        text-align: left;
+    }
+}

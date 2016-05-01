@@ -1,0 +1,44 @@
+<footer class="site-footer">
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+
+      <div class="footer-col footer-col-1">
+        <h3 class="footer-heading">Find me on</h3>
+        <ul class="social-media-list">
+          {% if site.linkedin %}
+          <li>
+            <a href="https://se.linkedin.com/in/{{ site.linkedin }}">
+              <i class="icon-social-linkedin"></i>
+            </a>
+          </li>
+          {% endif %}
+
+          {% if site.github %}
+          <li>
+            <a href="https://github.com/{{ site.github }}">
+              <i class="icon-social-github"></i>
+            </a>
+          </li>
+          {% endif %}
+
+          {% if site.twitter %}
+          <li>
+            <a href="https://twitter.com/{{ site.twitter }}">
+              <i class="icon-social-twitter"></i>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <h3 class="footer-heading">About me</h3>
+        <p>{{ site.description }}</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>

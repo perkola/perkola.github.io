@@ -1,0 +1,30 @@
+---
+layout: default
+---
+
+<div class="home">
+  <ul class="project-list">
+    {% assign projects = site.projects | sort: 'date' %}
+    {% for project in projects reversed %}
+      <li class="project">
+        <h2 class="project-title">
+          <a class="project-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
+        </h2>
+        <div class="project-col-wrapper">
+          <div class="project-col project-col-1">
+            <h3 class="project-heading"><i class="icon-briefcase"></i>The project</h3>
+            {{ project.content }}
+          </div>
+          <div class="project-col project-col-2">
+            <h3 class="project-heading"><i class="icon-layers"></i>Built with</h3>
+            <ul class="project-tools">
+              {% for tool in project.tools %}
+                <li>{{ tool }}</li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+</div>
