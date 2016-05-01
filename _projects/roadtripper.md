@@ -1,6 +1,8 @@
 ---
 layout: project
 title:  "Roadtripper - Final project in KTH course"
+image:  "roadtripper.jpg"
+link:   "http://roadtripper.me"
 date:   2016-05-01
 tools:
  - Node.js
