@@ -151,6 +151,16 @@
     }
 }
 
+.site-heading {
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: $small-font-size;
+
+    i {
+        margin-right: $spacing-unit / 4;
+    }
+}
+
 /**
  * Page content
  */

@@ -3,13 +3,19 @@ layout: default
 ---
 
 <div class="home">
+  <h3 class="site-heading"><i class="icon-docs"></i>Latest projects</h3>
   <ul class="project-list">
     {% assign projects = site.projects | sort: 'date' %}
     {% for project in projects reversed %}
       <li class="project">
+        <a class="project-link" href="{{ project.url | prepend: site.baseurl }}">
         <h2 class="project-title">
-          <a class="project-link" href="{{ project.url | prepend: site.baseurl }}">{{ project.title }}</a>
+          {{ project.title }}
         </h2>
+        {% if project.image %}
+          <img class="project-image" src="/assets/{{ project.image }}">
+        {% endif %}
+        </a>
         <div class="project-col-wrapper">
           <div class="project-col project-col-1">
             <h3 class="project-heading"><i class="icon-briefcase"></i>The project</h3>

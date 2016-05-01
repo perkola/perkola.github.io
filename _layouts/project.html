@@ -2,19 +2,31 @@
 layout: default
 ---
 <div class="project" itemscope itemtype="http://schema.org/WebApplication">
-
-  <header class="project-header">
-    <h1 class="project-title" itemprop="name headline">{{ page.title }}</h1>
-  </header>
-
-  {{ test }}
-
-  {% for tool in pages.test %}
-    {{ tool[0] }}
-  {% endfor %}
-
-  <div class="project-content" itemprop="about">
-    {{ content }}
+  <h1 class="project-title" itemprop="name headline">
+    {{ page.title }}
+  </h1>
+  {% if page.image %}
+    <img class="project-image" src="/assets/{{ page.image }}">
+  {% endif %}
+  <div class="project-col-wrapper">
+    <div class="project-col project-col-1" itemprop="about">
+      <h3 class="project-heading"><i class="icon-briefcase"></i>The project</h3>
+      {{ page.content }}
+    </div>
+    <div class="project-col project-col-2">
+      <h3 class="project-heading"><i class="icon-layers"></i>Built with</h3>
+      <ul class="project-tools">
+        {% for tool in page.tools %}
+          <li>{{ tool }}</li>
+        {% endfor %}
+      </ul>
+    </div>
   </div>
+  {% if page.link %}
+    <p>
+      <i class="icon-direction"></i> Available at: <a href="{{ page.link }}">{{ page.link }}</a>
+    </p>
+  {% endif %}
 
+  <a href="/"><i class="icon-arrow-left-circle"></i> Back</a>
 </div>
