@@ -3,6 +3,7 @@ layout: project
 title:  "Roadtripper - Final project in KTH course"
 image:  "roadtripper.jpg"
 date:   2016-05-01
+source: "https://github.com/perkola/roadtripper"
 tools:
  - Node.js
  - Vue.js

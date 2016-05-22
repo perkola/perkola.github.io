@@ -27,6 +27,11 @@ layout: default
       <i class="icon-direction"></i> Available at: <a href="{{ page.link }}">{{ page.link }}</a>
     </p>
   {% endif %}
+  {% if page.source %}
+    <p>
+      <a href="{{ page.source }}"><i class="icon-eye"></i> Source code</a>
+    </p>
+  {% endif %}
 
   <a href="/"><i class="icon-arrow-left-circle"></i> Back</a>
 </div>
