@@ -2,11 +2,11 @@
  * Site header
  */
 .site-header {
-    min-height: 240px;
     background: $brand-color;
     background-image: url("../assets/IMG_1575.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    min-height: 240px;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -17,12 +17,12 @@
 }
 
 .site-title {
+    float: right;
     font-size: 48px;
+    font-weight: $bold-font-weight;
     line-height: 240px;
     margin-bottom: 0;
-    float: right;
-    font-weight: $bold-font-weight;
-    text-shadow: 0 0 10px $text-color;
+    text-shadow: 0 0 $spacing-unit / 2 $grey-color-dark;
 
     @include media-query($on-laptop) {
         font-size: 36px;
@@ -30,13 +30,13 @@
     }
 
     @include media-query($on-palm) {
-        text-align: center;
+        display: inline-block;
         float: none;
         font-size: 28px;
-        width: 100%;
-        display: inline-block;
         line-height: 100%;
         margin-bottom: 20px;
+        text-align: center;
+        width: 100%;
     }
 
     &,
@@ -51,8 +51,8 @@
     float: left;
 
     img {
-        box-shadow: 0 0 $spacing-unit darken($brand-color, 20%);
         border-radius: 120px;
+        box-shadow: 0 0 $spacing-unit / 2 $grey-color-dark;
         height: 200px;
         margin-top: 20px;
     }
@@ -67,16 +67,16 @@
 
     @include media-query($on-palm) {
         display: block;
-        width: 100%;
-        text-align: center;
         height: 140px;
+        text-align: center;
+        width: 100%;
 
         img {
-            width: 100px;
-            height: 100px;
             float: none;
-            text-align: center;
+            height: 100px;
             margin: 20px auto;
+            text-align: center;
+            width: 100px;
         }
     }
 }
@@ -100,26 +100,26 @@
     }
 
     @include media-query($on-palm) {
-        position: absolute;
-        top: 9px;
-        right: $spacing-unit / 2;
         background-color: $brand-color;
-        border: 1px solid $background-color;
         border-radius: 5px;
+        border: 1px solid $background-color;
+        position: absolute;
+        right: $spacing-unit / 2;
         text-align: right;
+        top: 9px;
 
         .menu-icon {
             display: block;
             float: right;
-            width: 36px;
             height: 26px;
             line-height: 0;
             padding-top: 10px;
             text-align: center;
+            width: 36px;
 
             > svg {
-                width: 18px;
                 height: 15px;
+                width: 18px;
 
                 path {
                     fill: $grey-color-dark;
@@ -144,6 +144,7 @@
             &:not(:last-child) {
                 margin-right: 0;
             }
+
             margin-left: 20px;
         }
     }
@@ -180,8 +181,8 @@
 }
 
 .post-meta {
-    font-size: $small-font-size;
     color: $grey-color;
+    font-size: $small-font-size;
 }
 
 .post-link {
@@ -200,9 +201,9 @@
 }
 
 .post-title {
+    color: $brand-color;
     font-size: 28px;
     font-weight: $bold-font-weight;
-    color: $brand-color;
 
     @include media-query($on-laptop) {
         font-size: 36px;

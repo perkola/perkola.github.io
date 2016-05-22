@@ -10,9 +10,9 @@
 }
 
 .social-media-list {
+    font-size: 36px;
     list-style: none;
     margin: 0;
-    font-size: 36px;
 
     li {
         display: inline-block;
@@ -42,16 +42,16 @@
 }
 
 .footer-col-2 {
+    text-align: right;
     width: -webkit-calc(75%);
     width:         calc(75%);
-    text-align: right;
 }
 
 @include media-query($on-palm) {
     .footer-col {
         float: none;
+        text-align: left;
         width: -webkit-calc(100%);
         width:         calc(100%);
-        text-align: left;
     }
 }
