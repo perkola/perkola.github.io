@@ -2,6 +2,7 @@
 layout: project
 title:  "New personal website"
 date:   2016-04-31
+link:   "https://github.com/perkola/perkola.github.io"
 tools:
  - Jekyll
  - Sass
