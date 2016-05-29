@@ -1,0 +1,28 @@
+.post-list {
+    list-style-type: none;
+    margin: 0;
+}
+
+.post {
+    font-size: $base-font-size;
+    line-height: $base-line-height;
+    margin-bottom: $spacing-unit;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &-title {
+        font-size: 28px;
+        font-weight: $bold-font-weight;
+        margin: 0 0 $spacing-unit / 2 0;
+
+        @include media-query($on-palm) {
+            font-size: 22px;
+        }
+    }
+
+    &-meta {
+        color: $grey-color;
+    }
+}

@@ -19,6 +19,7 @@ collections:
   projects:
     output: true
     layout: project
-
+  posts:
+    output: true
 # Build settings
 markdown: kramdown
