@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is a personal CV website built as a single-page application using Vite, Lit web components, TypeScript, and Tailwind CSS v4. The site is deployed to GitHub Pages using git subtree.
+This is a personal CV website built as a single-page application using Vite, Lit web components, TypeScript, and Tailwind CSS v4. The site is deployed to GitHub Pages using the gh-pages npm package.
 
 ## Development Commands
 
@@ -17,25 +17,23 @@ npm run build
 
 # Preview production build locally
 npm run preview
+
+# Build and deploy to GitHub Pages
+npm run deploy
 ```
 
 ## Deployment to GitHub Pages
 
-The `dist/` folder is deployed to the `gh-pages` branch using git subtree:
+The site is deployed using the `gh-pages` npm package, which automatically builds and pushes the `dist/` folder to the `gh-pages` branch:
 
 ```bash
-# 1. Build the site
-npm run build
-
-# 2. Commit dist changes (dist is in .gitignore, so force add)
-git add -f dist
-git commit -m "Update site"
-
-# 3. Deploy using git subtree (force push if needed)
-git push origin `git subtree split --prefix dist main`:gh-pages --force
+# Deploy (builds and deploys in one command)
+npm run deploy
 ```
 
-The site is then available at https://perkola.github.io/
+**Note:** The `dist/` folder is not tracked in git on the main branch (it's in .gitignore). The `gh-pages` package handles creating and maintaining the `gh-pages` branch automatically.
+
+The site is available at https://perkola.github.io/
 
 ## Architecture
 
