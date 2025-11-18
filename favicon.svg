@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Purple to blue gradient inspired by Proton -->
+    <linearGradient id="wpGradient" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#a5b4fc;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- W shape -->
+  <path d="M 8 20 L 22 80 L 35 35 L 48 80 L 62 20" 
+        stroke="url(#wpGradient)" 
+        stroke-width="14" 
+        fill="none" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+  
+  <!-- Shared vertical line (right side of W / left side of P) -->
+  <line x1="62" y1="20" x2="62" y2="80" 
+        stroke="url(#wpGradient)" 
+        stroke-width="14" 
+        stroke-linecap="round"/>
+  
+  <!-- P shape (bowl/loop part) -->
+  <path d="M 62 20 L 82 20 Q 92 20 92 35 Q 92 50 82 50 L 62 50" 
+        stroke="url(#wpGradient)" 
+        stroke-width="14" 
+        fill="none" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"/>
+</svg>
