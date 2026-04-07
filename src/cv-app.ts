@@ -198,10 +198,10 @@ export class CvApp extends LitElement {
   render() {
     return html`
       <div
-        class="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4 transition-colors duration-200"
+        class="min-h-screen bg-gray-50 dark:bg-gray-900 py-8 px-4 transition-colors duration-200 print:min-h-0 print:!bg-white print:py-0 print:px-0"
       >
         <div
-          class="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden"
+          class="max-w-4xl mx-auto bg-white dark:bg-gray-800 shadow-lg rounded-lg overflow-hidden print:shadow-none print:rounded-none print:!bg-white"
         >
           <!-- Header -->
           ${this.renderHeader()}
@@ -337,12 +337,12 @@ export class CvApp extends LitElement {
 
     return html`
       <div
-        class="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-800 dark:to-gray-900 text-white p-8 relative"
+        class="bg-gradient-to-r from-blue-600 to-blue-800 dark:from-blue-800 dark:to-gray-900 text-white p-8 relative print:bg-none print:!bg-white print:text-gray-900 print:border-b-2 print:border-blue-600 print:p-4"
       >
         <!-- Theme toggle button -->
         <button
           @click=${this.cycleTheme}
-          class="absolute top-4 right-4 p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors duration-200 backdrop-blur-sm"
+          class="absolute top-4 right-4 p-2 rounded-lg bg-white/10 hover:bg-white/20 transition-colors duration-200 backdrop-blur-sm print:hidden"
           title="Toggle theme: ${this.themeMode}"
           aria-label="Toggle theme"
         >
@@ -350,7 +350,7 @@ export class CvApp extends LitElement {
         </button>
 
         <h1 class="text-4xl font-bold mb-2">${this.fullName}</h1>
-        <p class="text-xl mb-4 text-blue-100 dark:text-blue-200">
+        <p class="text-xl mb-4 text-blue-100 dark:text-blue-200 print:text-gray-600">
           ${this.jobTitle}
         </p>
         <div class="flex flex-wrap gap-4 text-sm">
@@ -389,14 +389,14 @@ export class CvApp extends LitElement {
 
   private renderExperience() {
     return html`
-      <div class="p-8 border-b border-gray-200 dark:border-gray-700">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+      <div class="p-8 border-b border-gray-200 dark:border-gray-700 print:p-4 print:!border-gray-200">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 print:mb-3">
           Experience
         </h2>
         <div class="space-y-8">
           ${this.experience.map(
             (exp) => html`
-              <div class="mb-8 last:mb-0">
+              <div class="mb-8 last:mb-0 print:mb-4 print:break-inside-avoid">
                 <!-- Company name -->
                 <h3
                   class="text-xl font-bold text-blue-600 dark:text-blue-400 mb-4"
@@ -405,12 +405,12 @@ export class CvApp extends LitElement {
                 </h3>
 
                 <!-- Positions with timeline -->
-                <div class="relative pl-10">
+                <div class="relative pl-10 print:pl-0">
                   <!-- Vertical line for all positions -->
                   ${exp.positions.length > 1
                     ? html`
                         <div
-                          class="absolute w-0.5 bg-blue-300 dark:bg-blue-600"
+                          class="absolute w-0.5 bg-blue-300 dark:bg-blue-600 print:hidden"
                           style="left: 5px; top: 8px; height: calc(100% - 1rem);"
                         ></div>
                       `
@@ -418,13 +418,13 @@ export class CvApp extends LitElement {
                   ${exp.positions.map(
                     (position, index) => html`
                       <div
-                        class="relative ${index < exp.positions.length - 1
-                          ? "mb-8"
+                        class="relative print:break-inside-avoid ${index < exp.positions.length - 1
+                          ? "mb-8 print:mb-3"
                           : ""}"
                       >
                         <!-- Dot -->
                         <div
-                          class="absolute w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full z-10"
+                          class="absolute w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full z-10 print:hidden"
                           style="left: -40px; top: 2px;"
                         ></div>
 
@@ -454,7 +454,7 @@ export class CvApp extends LitElement {
                                   ${position.skills.map(
                                     (skill) => html`
                                       <span
-                                        class="px-2 py-0.5 bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded text-xs font-medium"
+                                        class="px-2 py-0.5 bg-blue-50 dark:bg-blue-950 text-blue-700 dark:text-blue-300 rounded text-xs font-medium print:!bg-blue-50 print:!text-blue-700 print:border print:border-blue-200"
                                       >
                                         ${skill}
                                       </span>
@@ -478,14 +478,14 @@ export class CvApp extends LitElement {
 
   private renderEducation() {
     return html`
-      <div class="p-8 border-b border-gray-200 dark:border-gray-700">
-        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6">
+      <div class="p-8 border-b border-gray-200 dark:border-gray-700 print:p-4 print:border-b-0">
+        <h2 class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-6 print:mb-3">
           Education
         </h2>
-        <div class="space-y-4">
+        <div class="space-y-4 print:space-y-2">
           ${this.education.map(
             (edu) => html`
-              <div>
+              <div class="print:break-inside-avoid">
                 <div class="flex justify-between items-start mb-1">
                   <div>
                     <h3
@@ -520,7 +520,7 @@ export class CvApp extends LitElement {
 
     return html`
       <footer
-        class="mt-8 py-6 px-4 text-center text-sm text-gray-600 dark:text-gray-400"
+        class="mt-8 py-6 px-4 text-center text-sm text-gray-600 dark:text-gray-400 print:hidden"
       >
         <p class="mb-2">
           © ${currentYear} ${this.fullName}. All rights reserved.
