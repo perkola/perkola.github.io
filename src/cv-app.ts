@@ -411,7 +411,7 @@ export class CvApp extends LitElement {
                     ? html`
                         <div
                           class="absolute w-0.5 bg-blue-300 dark:bg-blue-600 print:hidden"
-                          style="left: 5px; top: 8px; height: calc(100% - 1rem);"
+                          style="left: 5px; top: 8px; height: calc(100% - 1rem); mask-image: linear-gradient(to bottom, black calc(100% - 3rem), transparent 100%); -webkit-mask-image: linear-gradient(to bottom, black calc(100% - 3rem), transparent 100%);"
                         ></div>
                       `
                     : ""}
@@ -425,7 +425,7 @@ export class CvApp extends LitElement {
                         <!-- Dot -->
                         <div
                           class="absolute w-3 h-3 bg-blue-600 dark:bg-blue-400 rounded-full z-10 print:hidden"
-                          style="left: -40px; top: 2px;"
+                          style="left: -40px; top: 8px;"
                         ></div>
 
                         <!-- Position content -->
